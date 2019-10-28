@@ -1,0 +1,14 @@
+import random
+print (' ')
+randomNumber = random.randint(0,9)
+print("The random number %d is the target." % randomNumber)
+
+print (' ')
+
+yourGuess = int(input('Now you must guess the number! = '))
+print (' ')
+while(randomNumber != yourGuess):
+  print('try again')
+  yourGuess = int(input('Now you must guess the number again! = '))
+print (' ')
+print('you win')
