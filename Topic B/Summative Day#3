@@ -1,0 +1,25 @@
+teams = ["Raptors","Leafs","Jays","TFC","Argos","Rock"]
+fileHandle = open("answers.txt","w")
+fileHandle.write("Teams I Like:\n")
+stopProgram = False
+numAnswers = 0
+
+answer = ""
+while not((answer == "yes") and (answer == "no")) :
+  for team in teams:
+    if numAnswers == 6:
+      break
+    answer = input("Do you like the %s? " %(teams[numAnswers]))
+    if answer == 'stop' :
+      stopProgram = True
+      break
+    elif not ((answer == "yes") or (answer == "no")):
+      print("Please answer yes or no (or type stop to end the program)")
+    else:
+      numAnswers += 1
+      fileHandle.write("Team %s, answer %s\n" %(team, answer))
+  if stopProgram == True :
+    break
+
+fileHandle.close()
+print("You have answered %d questions!" %(numAnswers))
